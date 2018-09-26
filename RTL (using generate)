@@ -1,0 +1,14 @@
+module sw_led(input [7:0] sw, output reg [7:0] led );
+    genvar i;
+        generate for(i=0;i<8;i=i+1)
+            begin
+                always@(sw)
+                   begin
+                        if(sw[i])
+                            led[i]=1;
+                        else
+                            led[i]=0;
+                   end
+             end
+         endgenerate
+endmodule
